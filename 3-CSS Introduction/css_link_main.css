@@ -1,0 +1,9 @@
+/* This is css main style */
+
+
+@import "css_link_sub1.css";
+@import "css_link_sub2.css";
+
+#sub_show1{
+    color: orange;
+}

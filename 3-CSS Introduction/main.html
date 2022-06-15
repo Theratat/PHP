@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html>
+
+    <header>
+        <meta charset="utf-8">
+        <meta name="description" content="Introduction to CSS">
+        <title>Introduction to CSS</title>
+    </header>
+
+    <link rel="stylesheet" type="text/css" href="css_link_main.css" media="screen" />
+    
+    <style type="text/css">
+
+        /*
+        
+        Internal CSS add style in head->stlye tag
+        
+        */
+        
+        #internal_show{
+            color :green;
+        }
+
+        /* Universal Selector use to add style in ALL of element */
+
+        *{
+            font-weight: bold;
+        }
+
+        /* Type selector uss to add style in ALL the type */
+        h1{
+            color: red;
+            border-style: solid;
+            border-color: black;
+        }
+
+        /* Class selector use to add stle in ALL element that has the same class */
+
+        .align_end{
+            text-align: end;
+            border-style: solid;
+            border-color: black;
+        }
+
+        /* Attribute selector must have the same attribute as defied in stlye to applied  */
+
+        h1[class="pink"]{
+            color: rgb(225, 9, 95);
+        }
+
+        /* Child and Desendent selector apllied style to ALL choosed element inside it 
+           Child selector is like Attribute selector (a and then b only)
+           Desendent selector is like Type selector (ALL b inside a) 
+        */
+        div h3{
+            color: rgb(105, 76, 38);
+        }
+
+        div>h3>a{
+            color: rgb(12, 212, 85);
+        }
+
+        /* Adjacent Sibling Selector can be use ONLY when a+is sibbing and ajasent to b */
+        div+a {
+            color: aqua;
+            border-style: dotted;
+        }
+
+    </style>
+
+    <body>
+        
+        <!-- Inline CSS add style in open tag directly. -->
+        <p style="color: red;">This is inline CSS</p>
+        <hr>
+
+        <!-- This is internal css -->
+        <p id="internal_show">This is internal CSS</p>
+        <hr>
+
+        <!-- This is external/link CSS -->
+        <p id="sub_show1">This is external CSS</p>
+        <p id="sub_show2">This is link CSS (1)</p>
+        <p id="sub_show3">This is link CSS (2)</p>
+        <hr>
+
+        <!-- This is Type selector of CSS -->
+        <h1>This header have type h1's style applied</h1>
+        <hr>
+
+        <!-- This is Class selector of CSS -->
+        <div class="align_end">
+
+            <h2>This header is in div that have align_end class applied</h2>
+            <p>This paragraph is in div that have align_end class applied</p>
+
+        </div>
+
+        <!-- this is h1 from h1[class="Blackend"]. only this will blackend the class -->
+
+        <h1 class="pink">This header use style from blackend class</h1>
+        <p class="pink">This paragraph class is pink. But it's not met the condition of atrribute selector</p>
+
+        <!-- This is Child selector of CSS -->
+        <div>
+            <h3>This header use style from div h3</h3>
+            <div>
+                <h3><a>This link use style from div.h3.a</a> || Then this should appiled style from div h3</h3>
+            </div>
+        </div>
+
+        <!-- This should apply div+a style -->
+        <a>This link should apply adjacent sibling style</a>
+        <hr>
+        <!-- This shouldn't apply div+a style -->
+        <a>This link should't apply any style</a>
+
+
+
+
+    </body>
+
+
+</html>
